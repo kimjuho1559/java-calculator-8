@@ -22,6 +22,12 @@ public class CustomParticles {
             return list;
         } else if (values[0].equals("/") || values[1].equals("/")) {
             invalidCustomParticles();
+        } else {
+            for (int i = 0; i < values.length; i++) {
+                if (values[i].equals("\n")) {
+                    invalidCustomParticles();
+                }
+            }
         }
         return list;
     }
