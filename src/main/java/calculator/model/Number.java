@@ -13,7 +13,7 @@ public class Number {
         }
         CustomParticles customParticles = new CustomParticles();
         List<String> particles = customParticles.separateParticles(value);
-        String[] values = value.split("\n");
+        String[] values = value.split("n");
         StringBuilder builder = new StringBuilder();
         builder.append("[");
         for (int i = 0; i < particles.size(); i++) {
