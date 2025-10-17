@@ -1,13 +1,22 @@
 package calculator.controller;
 
+import calculator.model.Calculator;
+import calculator.model.CustomParticles;
+import calculator.model.Number;
 import calculator.view.InputView;
 import calculator.view.OutputView;
 
 public class CalculatorController {
-    // model과 view를 연결시키는 controller 함수
+    private final OutputView outputView;
+    private final InputView inputView;
+
+    public CalculatorController() {
+        this.outputView = new OutputView();
+        this.inputView = new InputView();
+    }
     public void run() {
-        InputView inputView = new InputView();
-        OutputView outputView = new OutputView();
         String value = inputView.input();
+        Calculator calculator = new Calculator(value);
+        outputView.output(calculator.calculator());
     }
 }
