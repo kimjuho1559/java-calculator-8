@@ -28,8 +28,12 @@ public class Number {
 
     private int[] getInts(String[] values, int x, String splitParticles) {
         String[] splitValues = values[x].split(splitParticles);
+        final String REGEX = "[0-9]+";
         int[] numbers = new int[splitValues.length];
         for (int i = 0; i < splitValues.length; i++) {
+            if (!splitValues[i].matches(REGEX)) {
+                invalidValue();
+            }
             numbers[i] = Integer.parseInt(splitValues[i]);
         }
         return numbers;
