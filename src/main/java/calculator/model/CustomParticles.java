@@ -20,7 +20,7 @@ public class CustomParticles {
                 list.add(values[i]);
             }
             return list;
-        } else if (values[0].equals("/") || values[1].equals("/")) {
+        } else if (values[0].equals("/")) {
             invalidCustomParticles();
         } else {
             for (int i = 0; i < values.length; i++) {
