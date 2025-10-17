@@ -14,8 +14,11 @@ public class CustomParticles {
                 if (i == values.length - 1) {
                     invalidCustomParticles();
                 }
-                if (values[i].equals("\n")) {
-                    break;
+                if (values[i].equals("\\")) {
+                    if (values[i+1].equals("n")) {
+                        break;
+                    }
+                    invalidCustomParticles();
                 }
                 list.add(values[i]);
             }
@@ -24,7 +27,12 @@ public class CustomParticles {
             invalidCustomParticles();
         } else {
             for (int i = 0; i < values.length; i++) {
-                if (values[i].equals("\n")) {
+                if (values[i].equals("\\")) {
+                    if (values[i+1].equals("n")) {
+                        invalidCustomParticles();
+                    }
+                    invalidCustomParticles();
+                } else if (values[i].equals("n")) {
                     invalidCustomParticles();
                 }
             }
